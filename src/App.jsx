@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/root";
-import { Dashboard, Patients, Patient } from "./pages";
+import { Authentification, Dashboard, Patients, Patient } from "./pages";
+
 function App() {
     const router = createBrowserRouter([
         {
@@ -9,7 +10,8 @@ function App() {
             children: [
                 {
                     path: "/dashboard",
-                    element: <Dashboard />
+                    element: <Dashboard />,
+                    index: true
                 },
                 {
                     path: "/patients",
@@ -20,7 +22,11 @@ function App() {
                     element: <Patient />
                 }
             ]
-        }
+        },
+        {
+            path: "/authentification",
+            element: <Authentification />
+        },
     ])
     return (
         <RouterProvider router={router} />

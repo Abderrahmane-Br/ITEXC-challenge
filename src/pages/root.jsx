@@ -1,10 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 
 function root() {
+    const isAuth = true;
+
     return (
         <>
             Welcome
-            <Outlet />
+            {isAuth ?
+                <Outlet />
+                : <Navigate to="/authentification" replace />}
+
         </>
     )
 }
