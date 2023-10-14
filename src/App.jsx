@@ -12,7 +12,7 @@ function App() {
                     element: <Dashboard />
                 },
                 {
-                    path: "/patients",
+                    path: "/patients-list",
                     element: <Patients />
                 },
                 {

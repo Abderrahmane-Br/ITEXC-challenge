@@ -1,10 +1,14 @@
 import { Outlet } from "react-router-dom";
+import { Toolbar, Navbar } from "../generic-components";
 
 function root() {
     return (
         <>
-            Welcome
-            <Outlet />
+            <Toolbar />
+            <div className="worspace">
+                <Navbar />
+                <Outlet />
+            </div>
         </>
     )
 }

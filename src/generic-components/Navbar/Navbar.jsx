@@ -1,6 +1,6 @@
 import Navitem from "./Navitem";
 
-function Navabar() {
+function Navbar() {
     return (
         <nav>
             <Navitem name="Dashboard" />
@@ -11,4 +11,4 @@ function Navabar() {
         </nav>
     )
 }
-export default Navabar;
+export default Navbar;
