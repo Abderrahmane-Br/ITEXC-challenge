@@ -14,7 +14,7 @@ function App() {
                     index: true
                 },
                 {
-                    path: "/patients",
+                    path: "/patients-list",
                     element: <Patients />
                 },
                 {

@@ -5,7 +5,7 @@ function Navitem({
     // icon
 }) {
     return (
-        <Link>
+        <Link to={name.toLowerCase().replace(" ", "-")}>
             {/* <img src={icon} /> */}
             {name}
         </Link>

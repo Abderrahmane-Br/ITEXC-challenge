@@ -1,15 +1,14 @@
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { Toolbar, Navbar } from "../generic-components";
 
 function root() {
-    const isAuth = true;
-
     return (
         <>
-            Welcome
-            {isAuth ?
+            <Toolbar />
+            <div className="worspace">
+                <Navbar />
                 <Outlet />
-                : <Navigate to="/authentification" replace />}
-
+            </div>
         </>
     )
 }
