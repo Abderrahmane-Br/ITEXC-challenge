@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/root";
 import { Authentification, Dashboard, Patients, Patient } from "./pages";
+import "./styles/main.scss";
 
 function App() {
     const router = createBrowserRouter([

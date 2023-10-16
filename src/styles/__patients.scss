@@ -1,0 +1,136 @@
+@import './variables', './_utils';
+
+.patients {
+    &__header {
+        font-weight: 600;
+        font-size: $font-xxl;
+    }
+
+    &__toolbar {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 17px;
+
+        .searchbar {
+            min-width: 350px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            flex-wrap: auto;
+            gap: 10px;
+            background-color: $secondary-color;
+            padding: 0px max(10px, 1.6vw);
+            align-self: stretch;
+
+            &:first-of-type {
+                margin-left: auto;
+            }
+
+            img {
+                height: 1.5em;
+            }
+
+            span {
+                white-space: nowrap;
+            }
+
+            &:hover {
+                background-color: darken($color: $secondary-color, $amount: 5);
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1.6vw;
+    }
+}
+
+.patient__card {
+    flex: 1;
+    min-width: 230px;
+    display: flex;
+    flex-direction: column;
+    padding: max(16px, 1.1vw) max(16px, 1.6vw);
+    text-decoration: none;
+    border: 1px solid $border-color;
+    border-radius: max(8px, .5em);
+
+    &__name {
+        font-weight: 500;
+        font-size: max($font-m, .97vw);
+        margin-bottom: 12px;
+    }
+
+    &__address {
+        color: $patient-secondary-color;
+        font-weight: 400;
+        font-size: max($font-s, .97vw);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__info-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: $font-xs;
+        margin-bottom: 0.8vw;
+
+        span:first-child {
+            color: $patient-secondary-color;
+        }
+    }
+
+    &__button {
+        @include simple-button-dark(true);
+        padding: 1.3em;
+        text-decoration: none;
+        margin-top: 12px;
+    }
+
+    &.--main {
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        p {
+            border-bottom: 1px solid $border-color;
+            width: 100%;
+            flex-grow: 1;
+            box-sizing: border-box;
+        }
+    }
+
+    &>img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 620px) {
+    .patients__toolbar {
+        gap: 3px;
+
+        button {
+            flex-shrink: 1;
+
+            span {
+                display: none;
+            }
+        }
+
+        .searchbar {
+            min-width: max-content;
+            flex-grow: 1;
+        }
+    }
+}

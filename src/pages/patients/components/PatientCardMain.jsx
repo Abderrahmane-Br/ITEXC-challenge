@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PatientCardInfoRow from "../../patient/components/PatientCardInfoRow";
 
 function PatientCardMain({
     id,
@@ -10,15 +11,16 @@ function PatientCardMain({
     blood_glucose
 }) {
     return (
-        <Link className="patient__card --main" to={`/:${id}`}>
+        <div className="patient__card --main" >
             <img src={avatar} alt="patient avatar" />
             <span className="patient__card__name">{name}</span>
-            <span className="patient__card__address">{address}</span>
-            <br />
-            <div><span>Weight</span><span>{weight + 100}lbs</span></div>
-            <div><span>Blood Pressure</span><span>{blood_pressure}mmHg</span></div>
-            <div><span>Blood Glucose</span><span>{blood_glucose}mg/dl</span></div>
-        </Link>
+            <span className="patient__card__address">{address[1]}, {address[2]}</span>
+            <p></p>
+            <PatientCardInfoRow name="Weight" value={`${weight}lbs`} />
+            <PatientCardInfoRow name="Blood pressure" value={`${blood_pressure}mmHg`} />
+            <PatientCardInfoRow name="Blood glucose" value={`${blood_glucose}mg/dl`} />
+            <Link className="patient__card__button --simple-button --dark" to={`/:${id}`}>View patient details</Link>
+        </div>
     )
 }
 export default PatientCardMain;

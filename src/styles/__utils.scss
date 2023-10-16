@@ -1,0 +1,75 @@
+@import './variables';
+
+.searchbar {
+    display: flex;
+    min-width: max-content;
+    width: 30%;
+    height: clamp(25px, 1.6vw, 50px);
+    border: 1px solid $border-color;
+    border-radius: max(5px, .6em);
+    padding: max(3px, .9vw) max(7px, .7vw);
+    box-sizing: content-box;
+    align-items: center;
+
+
+    &__input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        font-size: clamp(11px, $font-m, 1.1vw);
+        margin: 0 max(4px, 0.6vw);
+        color: $patient-secondary-color;
+
+        &::placeholder {
+            color: $patient-secondary-color;
+        }
+    }
+
+    &__icon {
+        width: max(15px, 10%);
+        height: 100%;
+        opacity: 50%;
+    }
+
+    &__clear {
+        opacity: 30%;
+        height: 70%;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+}
+
+@mixin simple-button-dark ($dark) {
+    border-radius: max(8px, .5em);
+    font-size: $font-xs;
+    font-weight: 300;
+    text-align: center;
+
+    @if $dark==true {
+        color: white;
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: lighten($primary-color, 10%);
+        }
+    }
+
+    @else {
+        background-color: white;
+        color: $primary-color;
+
+        &:hover {
+            background-color: darken(white, 10%);
+        }
+    }
+}
+
+@mixin icon-button-sm {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
