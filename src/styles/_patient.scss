@@ -1,0 +1,123 @@
+@import './variables';
+
+.patient {
+    padding: 28px 20px;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__info {
+        flex: 1;
+    }
+
+    &__card {
+
+
+        &.--details {
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+
+            &>* {
+                margin: 0;
+            }
+
+
+            img {
+                width: 7vw;
+                height: 7vw;
+            }
+        }
+
+        &.--details &__button {
+            align-self: stretch;
+        }
+
+        &__appointments {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            column-gap: 10px;
+            justify-items: center;
+        }
+    }
+
+    &__notes {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        padding: max(10px, 1.7vw) max(15px, 2.7vw);
+        border: 1px solid $border-color;
+        border-radius: 8px;
+
+        h2 {
+            font-weight: 600;
+        }
+
+        .note {
+            border-left: 1px dashed $primary-color;
+            position: relative;
+            padding-left: 16px;
+            padding-bottom: max(14px, 1.7vw);
+
+            &__bullet-point {
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform: translateX(-50%) translateY(0);
+
+            }
+
+            &__card {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                padding: max(10px, 1.7vw);
+                margin-top: 16px;
+                margin-left: 5px;
+                background-color: #FAFAFA;
+                background-origin: border-box;
+                border-radius: 8px;
+                font-size: clamp(11px, .95vw, 2em);
+
+                &__title {
+                    font-size: $font-m;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+
+                &__body {
+                    color: $patient-secondary-color;
+                }
+
+                p {
+                    border: 1px solid $border-color;
+                }
+
+                &__footer {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    row-gap: 12px;
+                    text-transform: capitalize;
+
+                    .title {
+                        color: $patient-secondary-color;
+                    }
+
+                    a {
+                        color: $link-color;
+                    }
+                }
+
+            }
+
+            &:last-of-type {
+                border: none;
+            }
+        }
+    }
+}

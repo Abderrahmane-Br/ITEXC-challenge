@@ -10,22 +10,22 @@ function App() {
             element: <Root />,
             children: [
                 {
-                    path: "/dashboard",
+                    path: "dashboard",
                     element: <Dashboard />,
                     index: true
                 },
                 {
-                    path: "/patients-list",
+                    path: "patients-list",
                     element: <Patients />
                 },
                 {
-                    path: "/:patientID",
+                    path: ":patientID",
                     element: <Patient />
                 }
             ]
         },
         {
-            path: "/authentification",
+            path: "authentification",
             element: <Authentification />
         },
     ])
