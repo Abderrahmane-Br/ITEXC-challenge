@@ -73,3 +73,10 @@
     justify-content: center;
     gap: 10px;
 }
+
+@mixin appointmentStatusColor($class, $color) {
+    .#{$class}::before {
+        border-color: $color;
+        background-color: $color;
+    }
+}

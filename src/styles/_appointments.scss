@@ -1,0 +1,125 @@
+@import 'react-big-calendar/lib/sass/styles', './variables';
+
+.appointments {
+
+    .calendars {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .rbc-calendar {
+            flex: 1;
+            overflow-y: hidden;
+            min-width: 250px;
+
+            &:not(:first-child) {
+                .rbc-time-gutter {
+                    display: none;
+                }
+            }
+        }
+
+        .rbc-event {
+            padding-left: calc(min(max(5px, 2%), 7px) + 4px);
+            background-color: #F3F4F6;
+            border-color: transparent;
+        }
+    }
+}
+
+.calendar-profile {
+    display: flex;
+    min-height: 30px;
+    height: 5vw;
+    align-items: center;
+    justify-content: left;
+    gap: 8px;
+    padding-left: 12px;
+
+    &__pic {
+        // flex: 1;
+        height: 80%;
+        width: 5%;
+        border-radius: 50%;
+        background-color: gray;
+    }
+
+    &__info {
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+
+        &>p {
+            margin: 0;
+
+            &:first-child {
+                font-size: $font-s;
+                font-weight: 500;
+            }
+
+            &:last-child {
+                font-size: $font-xs;
+                font-weight: 300;
+                color: $patient-secondary-color;
+            }
+        }
+    }
+}
+
+.rbc-today {
+    background-color: transparent;
+}
+
+.rbc-event-label {
+    font-size: $font-xs;
+}
+
+.rbc-event-content {
+    font-size: 10px;
+}
+
+.rbc-time-header {
+    display: none;
+}
+
+.rbc-time-content {
+    overflow: hidden;
+}
+
+
+// adding status 
+.rbc-event::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: min(max(5px, 2%), 7px);
+    height: 100%;
+    border: 2px solid $border-color;
+    background-color: $border-color
+}
+
+@include appointmentStatusColor(checked-out, #12BDB2);
+@include appointmentStatusColor(checked-in, #8239BC);
+@include appointmentStatusColor(confirmed, #54A0CA);
+@include appointmentStatusColor(scheduled, #FBB500);
+
+// customizing the time gutter
+
+.rbc-time-gutter .rbc-timeslot-group>span {
+    // font-size: $font-s;
+
+    &:last-child {
+        border-top: 1px solid transparent;
+        // display: none;
+        color: transparent;
+    }
+}
+
+.rbc-day-slot .rbc-timeslot-group>span {
+    color: transparent;
+
+    &:last-child {
+        border-top: 1px solid #f7f7f7;
+    }
+}
