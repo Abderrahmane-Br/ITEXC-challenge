@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/root";
-import { Authentification, Dashboard, Patients, Patient } from "./pages";
+import { Appointments, Authentification, Dashboard, Patients, Patient } from "./pages";
 import "./styles/main.scss";
 
 function App() {
@@ -21,6 +21,10 @@ function App() {
                 {
                     path: ":patientID",
                     element: <Patient />
+                },
+                {
+                    path: "appointments",
+                    element: <Appointments />
                 }
             ]
         },
