@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { dayjsLocalizer } from 'react-big-calendar';
 import dayjs from 'dayjs';
 import EventsList from "./events";
-import MyCalendar from "./Calendar";
-import Toolbar from "./Toolbar";
+import MyCalendar from "./components/Calendar";
+import Toolbar from "./components/Toolbar";
 
 
 function Appointments() {
