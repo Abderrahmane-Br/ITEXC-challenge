@@ -1,6 +1,6 @@
 function Button({ type, children }) {
     return (
-        <div className={type}>{children}</div>
+        <button className={type}>{children}</button>
     )
 }
 export default Button
