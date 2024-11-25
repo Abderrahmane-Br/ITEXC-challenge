@@ -43,6 +43,33 @@
 
 }
 
+.dropdown {
+    position: relative;
+    
+    &:hover {
+        cursor: pointer;
+    }
+    
+    &-menu {
+        visibility: hidden;
+        position: absolute;
+        background-color: $secondary-color;
+        
+        &.active {
+            visibility: visible;
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+
+    &-option {
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+}
+
 @mixin simple-button-dark ($dark) {
     border-radius: max(8px, .5em);
     font-size: $font-xs;
